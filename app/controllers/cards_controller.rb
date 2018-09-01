@@ -18,7 +18,7 @@ class CardsController < ApplicationController
       title: params[:card][:title],
       description: params[:card][:description]
     )
-    render status: 200
+    render status: 200, json: @card.to_json
   end
 
   def show
