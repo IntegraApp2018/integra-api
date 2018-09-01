@@ -1,0 +1,10 @@
+CARD! \o/
+<p>
+<% @cards.each do |card| %>
+  <%= card.title %><br>
+  <%= card.description %>
+<% end %>
+</p>
+
+
+<br> <%= link_to "criar card", new_card_path %>
