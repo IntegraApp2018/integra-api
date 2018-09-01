@@ -11,7 +11,9 @@ class CardsController < ApplicationController
   end
 
   def create
-    @card = Card.create(card_params)
+    @card = Card.new(card_params)
+    @card.category = Category.find_by(name:"Outros") if !@card.category
+    @card.save
     render status: 200, json: @card.to_json
   end
 
