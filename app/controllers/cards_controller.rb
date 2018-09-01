@@ -3,6 +3,10 @@ class CardsController < ApplicationController
 
   def index
     @cards = Card.all
+    respond_to do |format|
+      format.html
+      format.json { render json: @cards }
+    end
   end
 
   def new
@@ -10,11 +14,18 @@ class CardsController < ApplicationController
   end
 
   def create
-    Card.create(
+    @card = Card.new(
       title: params[:card][:title],
       description: params[:card][:description]
     )
-    redirect_to cards_url
+    redirect_to cards_url unless !@card.save
+  end
+
+  def show
+    respond_to do |format|
+      format.html
+      format.json { render json: @card }
+    end
   end
 
 end
