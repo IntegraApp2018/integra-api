@@ -14,21 +14,15 @@ class CardsController < ApplicationController
   end
 
   def create
-    @card = Card.new(
+    @card = Card.create(
       title: params[:card][:title],
       description: params[:card][:description]
     )
-    respond_to do |format|
-      format.html {
-        redirect_to cards_url unless !@card.save
-      }
-      format.json {
-        render json: @card if @card.save
-      }
-    end
+    render status: 200
   end
 
   def show
+    @card = Card.find(params[:card][:id])
     respond_to do |format|
       format.html
       format.json { render json: @card }
