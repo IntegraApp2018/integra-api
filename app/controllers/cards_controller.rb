@@ -44,7 +44,7 @@ class CardsController < ApplicationController
   private
 
   def card_params
-    params.permit(:title, :description,:people_interested, :category_id)
+    params.permit(:title, :description,:people_interested, :category_id, :people_needed)
   end
 
 end
