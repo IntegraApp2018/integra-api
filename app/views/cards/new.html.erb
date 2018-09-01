@@ -7,6 +7,10 @@
   <%= text_field_tag(:people_needed) %>
   <%= label_tag(:category_id, "category_id") %>
   <%= select_tag(:category_id,options_for_select(Category.all.map {|category| [category.name, category.id]})) %>
+  <%= label_tag(:location, "location") %>
+  <%= text_field_tag(:location) %>
+  <%= label_tag(:time, "time") %>
+  <%= date_field_tag(:time) %>
   <br>
   <%= submit_tag("create") %>
 <% end %>
