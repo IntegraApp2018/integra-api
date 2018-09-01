@@ -3,10 +3,7 @@ class CardsController < ApplicationController
 
   def index
     @cards = Card.all
-    respond_to do |format|
-      format.html
-      format.json { render json: @cards }
-    end
+    render status: 200, json: @cards.to_json
   end
 
   def new
@@ -19,11 +16,8 @@ class CardsController < ApplicationController
   end
 
   def show
-    @card = Card.find(params[:card][:id])
-    respond_to do |format|
-      format.html
-      format.json { render json: @card }
-    end
+    @card = Card.find(params[:id])
+    render status: 200, json: @cards.to_json
   end
 
   private
