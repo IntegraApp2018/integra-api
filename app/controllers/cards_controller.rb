@@ -18,7 +18,14 @@ class CardsController < ApplicationController
       title: params[:card][:title],
       description: params[:card][:description]
     )
-    redirect_to cards_url unless !@card.save
+    respond_to do |format|
+      format.html {
+        redirect_to cards_url unless !@card.save
+      }
+      format.json {
+        render json: @card if @card.save
+      }
+    end
   end
 
   def show
