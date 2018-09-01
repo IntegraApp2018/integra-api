@@ -1,0 +1,6 @@
+<%= form_tag("/categories", method: "post") do %>
+  <%= label_tag(:name, "name") %>
+  <%= text_field_tag(:name) %>
+  <br>
+  <%= submit_tag("create") %>
+<% end %>

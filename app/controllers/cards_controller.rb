@@ -23,7 +23,7 @@ class CardsController < ApplicationController
   private
 
   def card_params
-    params.permit(:title, :description)
+    params.permit(:title, :description,:quantity_of_people, :category_id)
   end
 
 end
