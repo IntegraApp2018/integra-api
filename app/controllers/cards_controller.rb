@@ -14,10 +14,7 @@ class CardsController < ApplicationController
   end
 
   def create
-    @card = Card.create(
-      title: params[:card][:title],
-      description: params[:card][:description]
-    )
+    @card = Card.create(card_params)
     render status: 200, json: @card.to_json
   end
 
@@ -27,6 +24,12 @@ class CardsController < ApplicationController
       format.html
       format.json { render json: @card }
     end
+  end
+
+  private
+
+  def card_params
+    params.permit(:title, :description)
   end
 
 end

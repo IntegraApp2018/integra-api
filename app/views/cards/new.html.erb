@@ -1,5 +1,8 @@
-<%= form_for @card do |form| %>
-  <%= form.text_field :title %>
-  <%= form.text_field :description %>
-  <%= form.submit "Enviar" %>
+<%= form_tag("/cards", method: "post") do %>
+  <%= label_tag(:title, "title") %>
+  <%= text_field_tag(:title) %>
+  <%= label_tag(:description, "description") %>
+  <%= text_field_tag(:description) %>
+  <br>
+  <%= submit_tag("create") %>
 <% end %>
