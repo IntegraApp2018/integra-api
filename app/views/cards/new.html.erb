@@ -3,8 +3,8 @@
   <%= text_field_tag(:title) %>
   <%= label_tag(:description, "description") %>
   <%= text_field_tag(:description) %>
-  <%= label_tag(:quantity_of_people, "quantity_of_people") %>
-  <%= text_field_tag(:quantity_of_people) %>
+  <%= label_tag(:people_needed, "people_needed") %>
+  <%= text_field_tag(:people_needed) %>
   <%= label_tag(:category_id, "category_id") %>
   <%= select_tag(:category_id,options_for_select(Category.all.map {|category| [category.name, category.id]})) %>
   <br>
