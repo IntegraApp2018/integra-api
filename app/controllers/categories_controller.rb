@@ -20,6 +20,16 @@ class CategoriesController < ApplicationController
     render status: 200, json: @category.to_json
   end
 
+  def edit
+    @category = Category.find(params[:id])
+  end
+
+  def update
+    @category = Category.find(params[:id])
+    @category.update(category_params)
+    render status: 200, json: @category.to_json
+  end
+
   def show
     @category = Category.find(params[:category_id])
     render status: 200, json: @categories.to_json
