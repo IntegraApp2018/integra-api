@@ -3,17 +3,17 @@ class CardsController < ApplicationController
 
   def index
     @cards = Card.all
-    render status: 200, json: @cards.to_json(:include => :category)
+    render status: 200
   end
 
   def ideas
     @cards = Card.where(is_action:false)
-    render status: 200, json: @cards.to_json(:include => :category)
+    render status: 200
   end
 
   def actions
     @cards = Card.where(is_action:true)
-    render status: 200, json: @cards.to_json(:include => :category)
+    render status: 200
   end
 
   def new
@@ -30,7 +30,6 @@ class CardsController < ApplicationController
 
   def show
     @card = Card.find(params[:id])
-    render status: 200, json: @card.to_json(:include => :category)
   end
 
   def add_people
