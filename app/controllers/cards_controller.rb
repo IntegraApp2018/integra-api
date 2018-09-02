@@ -31,7 +31,7 @@ class CardsController < ApplicationController
     @card.save
     material = Material.new(
       name: params[:material_name],
-      quantity_needed: params[:material_quantity]
+      quantity_needed: params[:material_quantity],
       card_id: @card.id
     )
     @card.materials << material unless material.save
