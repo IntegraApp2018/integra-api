@@ -10,7 +10,10 @@ Rails.application.routes.draw do
   get 'categories/list', to: 'categories#list'
   resources :categories
   resources :materials
-  resources :users
+  resources :users do
+    get 'owned_cards', to: 'users#owned_cards'
+    get 'joined_cards', to: 'users#joined_cards'
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
