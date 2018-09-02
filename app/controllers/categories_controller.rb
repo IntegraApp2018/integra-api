@@ -31,8 +31,8 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:category_id])
-    render status: 200, json: @categories.to_json
+    @category = Category.find(params[:id])
+    render status: 200, json: @category.to_json
   end
 
   private
