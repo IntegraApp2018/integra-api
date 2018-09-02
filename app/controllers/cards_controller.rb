@@ -27,9 +27,13 @@ class CardsController < ApplicationController
   def create
     @card = Card.new(card_params)
     @card.people_interested = 0
+    @card.materials << Material.new(
+      name: params[:material_name],
+      quantity_needed: params[:material_quantity]
+    )
     @card.category = Category.find_by(name:"Outros") if !@card.category
     @card.save
-    render status: 200, json: @card.to_json
+    render "show"
   end
 
   def show
@@ -55,7 +59,8 @@ class CardsController < ApplicationController
       :people_needed,
       :time,
       :location,
-      :owner_id
+      :owner_id,
+      materials_attributes: [:name, :quantity, :id]
     )
   end
 

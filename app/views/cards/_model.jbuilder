@@ -73,11 +73,12 @@ json.participants card.participants do |participant|
 end
 
 json.materials card.materials do |material|
-  json.name         material.name
-  json.quantity     material.quantity
+  json.name                material.name
+  json.quantity_needed     material.quantity_needed
 end
 
 json.category do
   json.id     card.category.try(:id)
   json.name   card.category.try(:name)
+  # json.image_url   card.category.try(:image_url)
 end
