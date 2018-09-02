@@ -1,4 +1,6 @@
 class ParticipantsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+  
   def index
     @participants = Participant.where(card_id:params[:card_id])
     render status: 200, json: @participants.to_json
