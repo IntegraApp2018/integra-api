@@ -69,3 +69,8 @@ json.participants card.participants do |participant|
   json.name   participant.user.name
   json.id     participant.user.id
 end
+
+json.materials card.materials do |material|
+  json.name         material.name
+  json.quantity     material.quantity
+end
