@@ -27,12 +27,14 @@ class CardsController < ApplicationController
   def create
     @card = Card.new(card_params)
     @card.people_interested = 0
-    @card.materials << Material.new(
-      name: params[:material_name],
-      quantity_needed: params[:material_quantity]
-    )
     @card.category = Category.find_by(name:"Outros") if !@card.category
     @card.save
+    material = Material.new(
+      name: params[:material_name],
+      quantity_needed: params[:material_quantity]
+      card_id: @card.id
+    )
+    @card.materials << material unless material.save
     render "show"
   end
 
