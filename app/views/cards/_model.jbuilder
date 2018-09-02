@@ -63,6 +63,7 @@ end if card.time
 json.leader do
   json.id     card.owner_id
   json.name   card.owner.try(:name)
+  json.phone  card.owner.try(:phone)
 end
 
 json.participants card.participants do |participant|
