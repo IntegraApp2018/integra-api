@@ -1,24 +1,59 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```
+Receber o index dos cards idéias 
+GET /ideas
 
-Things you may want to cover:
+Receber o index dos cards ações 
+GET /actions
 
-* Ruby version
+Criar um novo card 
+POST /cards 
+parametros 
+title, 
+description, 
+people_interested, 
+category_id, 
+people_needed, 
+time, 
+location, 
+owner_id
 
-* System dependencies
+Receber informações de um card específico 
+GET /cards/:id
 
-* Configuration
+Adicionar +1 a quantidade de pessoas interessadas no card 
+POST /cards/:id/add_people
 
-* Database creation
+Criar uma nova categoria 
+POST /categories 
+parametros: 
+name
 
-* Database initialization
+Receber um array com todas categorias (como nome e id para o select, a form de criar um card envia só o ID da categoria) 
+GET /categories/list
 
-* How to run the test suite
+Criar um usuário (Vai retornar o usuário criado com ID dele, se tiver como guarda esse ID dele) 
+POST /users 
+parametros: 
+name, 
+email, 
+password
 
-* Services (job queues, cache servers, search engines, etc.)
+Receber os participantes de um card 
+GET /cards/:card_id/participants
 
-* Deployment instructions
+Adicionar um participante a um card (precisa do ID de um usuário que foi criado) 
+POST /cards/:card_id/participants 
+parametros: 
+user_id
 
-* ...
+Receber todos os cards de uma categoria específica 
+GET /categories/:category_id/cards
+
+Receber todos card criados por um usuário específico 
+GET /users/:user_id/owned_cards
+
+Receber todos card que um usuário específico vai participar 
+GET /users/:user_id/joined_cards
+```
