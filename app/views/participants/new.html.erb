@@ -1,0 +1,6 @@
+<%= form_tag("/cards/#{@participant.card_id}/participants", method: "post") do %>
+  <%= label_tag(:user_id, "user_id") %>
+  <%= text_field_tag(:user_id) %>
+  <br>
+  <%= submit_tag("create") %>
+<% end %>

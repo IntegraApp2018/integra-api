@@ -1,0 +1,10 @@
+<%= form_tag("/users", method: "post") do %>
+  <%= label_tag(:name, "name") %>
+  <%= text_field_tag(:name) %>
+  <%= label_tag(:email, "email") %>
+  <%= text_field_tag(:email) %>
+  <%= label_tag(:password, "password") %>
+  <%= text_field_tag(:password) %>
+  <br>
+  <%= submit_tag("create") %>
+<% end %>
