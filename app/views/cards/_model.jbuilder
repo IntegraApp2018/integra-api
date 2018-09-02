@@ -51,7 +51,7 @@ json.(
   :location,
   )
 
-days = (card.to_date - DateTime.now.to_date).to_i rescue 0
+days = (card.time.to_date - DateTime.now.to_date).to_i rescue 0
 
 json.time do
   json.title      "#{week_day}, #{card.time.day} de #{month}"
