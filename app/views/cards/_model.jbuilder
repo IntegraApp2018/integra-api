@@ -78,7 +78,7 @@ json.materials card.materials do |material|
 end
 
 json.category do
-  json.id     card.category.try(:id)
-  json.name   card.category.try(:name)
-  # json.image_url   card.category.try(:image_url)
+  json.id          card.category.try(:id)
+  json.name        card.category.try(:name)
+  json.image_url   card.category.try(:image_url)
 end
