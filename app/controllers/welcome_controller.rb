@@ -48,7 +48,16 @@ class WelcomeController < ApplicationController
     POST   /cards/:card_id/participants
     parametros:
       user_id
-      
+
+    Receber todos os cards de uma categoria específica
+    GET   /categories/:category_id/cards
+
+    Receber todos card criados por um usuário específico
+    GET   /users/:user_id/owned_cards
+
+    Receber todos card que um usuário específico vai participar
+    GET   /users/:user_id/joined_cards
+
     HEREDOC
   end
 end

@@ -25,9 +25,9 @@ card = Card.create(
   time: DateTime.parse("2018-10-10T10:00:00+07:00")
 )
 
-card.participants.create(user_id:leia)
-card.participants.create(user_id:yoda)
-card.participants.create(user_id:anakin)
+card.participants.create(user_id:leia.id)
+card.participants.create(user_id:yoda.id)
+card.participants.create(user_id:anakin.id)
 
 card = Card.create(
   title:"Pintura do ginásio da escola",

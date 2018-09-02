@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     resources :participants
   end
   get 'categories/list', to: 'categories#list'
-  resources :categories
+  resources :categories do
+    resources :cards
+  end
   resources :materials
   resources :users do
     get 'owned_cards', to: 'users#owned_cards'

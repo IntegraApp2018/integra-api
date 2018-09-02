@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   skip_before_action :verify_authenticity_token
-  
+
   def index
     @categories = Category.all
     render status: 200, json: @categories.to_json
@@ -21,7 +21,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
+    @category = Category.find(params[:category_id])
     render status: 200, json: @categories.to_json
   end
 

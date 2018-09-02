@@ -2,7 +2,11 @@ class CardsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    @cards = Card.all
+    if params[:category_id]
+      @cards = Card.where(category_id:params[:category_id])
+    else
+      @cards = Card.all
+    end
     render status: 200
   end
 
