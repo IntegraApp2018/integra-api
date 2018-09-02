@@ -74,3 +74,8 @@ json.materials card.materials do |material|
   json.name         material.name
   json.quantity     material.quantity
 end
+
+json.category do
+  json.id     card.category.try(:id)
+  json.name   card.category.try(:name)
+end
