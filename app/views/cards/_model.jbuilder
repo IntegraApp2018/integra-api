@@ -44,6 +44,7 @@ end if card.time
 
 json.(
   card,
+  :id,
   :title,
   :description,
   :people_interested,
