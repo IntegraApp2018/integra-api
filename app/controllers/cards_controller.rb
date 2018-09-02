@@ -30,7 +30,7 @@ class CardsController < ApplicationController
 
   def show
     @card = Card.find(params[:id])
-    render status: 200, json: @card.to_json
+    render status: 200, json: @card.to_json(:except => [:created_at, :updated_at], :include => { :category  => { :except => [:created_at, :updated_at]} } )
   end
 
   def add_people
